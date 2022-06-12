@@ -1,0 +1,11 @@
+.header_bar {
+  background-color: darkblue;
+  height: 80px;
+}
+
+.app-title a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 30px 15px;
+}

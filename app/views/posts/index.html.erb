@@ -1,2 +1,9 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="contents row">
+  <% @posts.each do |post| %>
+    <div class="content_post" >
+     <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+      <p><%= post.text %></p>
+
+    </div>
+  <% end %>
+</div>
