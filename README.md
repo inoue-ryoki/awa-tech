@@ -29,6 +29,15 @@
 
 - belongs_to :user
 
+## posts テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| text   | string | null: false |
+
+### Association
+- belongs_to :user
+
 
 ## rooms テーブル
 
