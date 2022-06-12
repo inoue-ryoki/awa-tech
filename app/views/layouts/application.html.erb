@@ -4,12 +4,24 @@
     <title>AwaTech</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+     <header class="header">
+      <div class="header_bar">
+        <h1 class="app-title"><a href="/">AwaTech</a></h1>
+
+      </div>
+    </header>
     <%= yield %>
+
+        <footer>
+      <p>
+        Copyright AwaTech 2022.
+      </p>
+    </footer>
   </body>
 </html>

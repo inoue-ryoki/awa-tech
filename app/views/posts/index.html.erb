@@ -1,0 +1,9 @@
+<div class="contents row">
+  <% @posts.each do |post| %>
+    <div class="content_post" >
+     <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+      <p><%= post.text %></p>
+
+    </div>
+  <% end %>
+</div>
