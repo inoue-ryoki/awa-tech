@@ -18,6 +18,7 @@
         <div class = "nav_button">
 
           <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn btn-primary" %>
           <div class="user_nav">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn btn-primary" %>
             <%# <%= link_to "投稿する", new_item_path, class: "post" %>
