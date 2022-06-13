@@ -1,7 +1,11 @@
 .header_bar {
   background-color: darkblue;
   height: 80px;
+  display: flex;
+  justify-content: space-between;
 }
+
+
 
 .app-title a {
   color: white;
