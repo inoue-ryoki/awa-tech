@@ -1,9 +1,17 @@
-<div class="contents row">
+<div class = "post_button">
+<%= link_to "投稿する",new_post_path,{class:"btn btn-primary"}%>
+</div>
+<div class="contents">
   <% @posts.each do |post| %>
+  <%= link_to(user_path(post.id),  class: 'list-content') do%>
     <div class="content_post" >
-     <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+     <%= image_tag post.image.variant(resize: '300x200'), class: 'post-image' if post.image.attached? %>
+     <div class="post_text">
       <p><%= post.text %></p>
 
+      </div>
+
     </div>
+    <% end %>
   <% end %>
 </div>
