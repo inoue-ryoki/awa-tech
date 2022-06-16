@@ -11,14 +11,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-
-
-  end
+def show
+  @user = User.find(params[:id])
+end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email,:school_name,:telephone_number,:teacher_name,:school_content)
   end
 end

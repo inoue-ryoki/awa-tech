@@ -17,13 +17,13 @@
 
 ## profiles テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| school_name        | string | null: false |
-| address            | string | null: false |
-| telephone_number   | string | null: false |
-| name               | string | null: false |
-| school_content     | string | null: false |
+| Column                     | Type   | Options     |
+| ------------------         | ------ | ----------- |
+| school_name                | string | null: false |
+| address                    | string | null: false |
+| telephone_number           | string | null: false |
+| teacher_name               | string | null: false |
+| school_content             | string | null: false |
 
 ### Association
 
