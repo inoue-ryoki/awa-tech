@@ -7,18 +7,6 @@
 | name               | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-
-### Association
-
-- has_many :posts
-- has_many :rooms, through: :entries
-- has_many :messages
-- has_one  :profile
-
-## profiles テーブル
-
-| Column                     | Type   | Options     |
-| ------------------         | ------ | ----------- |
 | school_name                | string | null: false |
 | address                    | string | null: false |
 | telephone_number           | string | null: false |
@@ -27,7 +15,11 @@
 
 ### Association
 
-- belongs_to :user
+- has_many :posts
+- has_many :rooms, through: :entries
+- has_many :messages
+
+
 
 ## posts テーブル
 
@@ -41,9 +33,9 @@
 
 ## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| user   | string | null: false |
+| Column | Type       | Options                        |
+| ------ | ------     | -------------------------------|
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
