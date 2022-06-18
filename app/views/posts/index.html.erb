@@ -2,12 +2,19 @@
 <div class = "post_button">
 <%= link_to "投稿する",new_post_path,{class:"btn btn-primary"}%>
 </div>
+<div class="jumbotron text-center hero">
+<h1>徳島のプログラミング教室</h1>
+
+</div>
 <div class="contents">
+
+<h2 class = "school-list text-center">教室情報</h2>
   <% @posts.each do |post| %>
   <%= link_to(user_path(post.user_id),  class: 'list-content text-decoration-none') do%>
     <div class="content_post" >
      <%= image_tag post.image.variant(resize: '300x200'), class: 'post-image' if post.image.attached? %>
      <div class="post_text">
+      <p>教室名:<%= post.user.school_name %></p>
       <p><%= post.text %></p>
 
       </div>
