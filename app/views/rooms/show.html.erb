@@ -1,0 +1,28 @@
+<div class= "container">
+
+<h1>DM</h1>
+
+<h4>参加者</h4>
+<% @entries.each do |e| %>
+  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+<% end %>
+
+<hr>
+<% if @messages.present? %>
+  <% @messages.each do |m| %>
+    <strong><%= m.content %></strong>
+    <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %>さん</a></strong></small>
+    <hr>
+  <% end %>
+<% else %>
+  <h3 class="text-center">メッセージはまだありません</h3>
+<% end %>
+
+<%= form_for @message do |f| %>
+  <%= f.text_field :content, placeholder: "メッセージを入力して下さい" , rows: 15,class:"form-control"%>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <br>
+  <%= f.submit "投稿する",class:"btn btn-secondary" %>
+<% end %>
+
+</div>
