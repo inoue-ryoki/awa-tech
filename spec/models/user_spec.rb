@@ -3,11 +3,17 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
+      sleep 0.1
   end
 
    describe 'ユーザー新規登録' do
     context '新規登録できる場合' do
-      it 'nameとemail、passwordとpassword_confirmation,school_name,address,telephone_number,teacher_name,school_contentが存在すれば登録できる' do
+      it 'nameとemail、passwordとpassword_confirmation,school_name,address,telephone_number,teacher_name,school_content,imageが存在すれば登録できる' do
+        expect(@user).to be_valid
+      end
+
+      it 'imageが空でも登録できる' do
+        @user.image = nil
         expect(@user).to be_valid
       end
 
@@ -64,6 +70,7 @@ RSpec.describe User, type: :model do
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
+
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
 

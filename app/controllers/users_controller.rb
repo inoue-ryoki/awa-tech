@@ -37,6 +37,6 @@ def show
   private
 
   def user_params
-    params.require(:user).permit(:name, :email,:school_name,:telephone_number,:teacher_name,:school_content)
+    params.require(:user).permit(:name, :email,:school_name,:telephone_number,:teacher_name,:school_content,:image)
   end
 end

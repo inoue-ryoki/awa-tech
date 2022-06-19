@@ -9,5 +9,9 @@ FactoryBot.define do
     telephone_number {"000-0000-0000"}
     teacher_name {"山田太郎"}
     school_content {"スクラッチをしています"}
+
+        after(:build) do |user|
+      user.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
   end
 end
