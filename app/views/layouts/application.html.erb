@@ -12,37 +12,62 @@
   </head>
 
   <body>
+
      <header class="header">
-      <div class="header_bar">
+     <nav class="navbar navbar-expand-lg navbar-light"style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+   <%= link_to "AwaTech" , root_path,class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <% if user_signed_in? %>
+        <li class="nav-item">
 
-        <h1 class="app-title"><a href="/">AwaTech</a></h1>
-        <i class="fa-solid fa-computer"></i>
 
-        <div class = "nav_button">
+         <%= link_to "ログアウト" , destroy_user_session_path, method: :delete ,class: "nav-link active" %>
 
-          <% if user_signed_in? %>
 
-          <div class="user_nav">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn btn-primary" %>
+        </li>
+           <% end %>
+           <% if user_signed_in? %>
+           <% else %>
+        <li class="nav-item">
 
-          </div>
-        <% else %>
-          <div class="user_nav">
-            <%= link_to "ログイン", new_user_session_path, class: "post btn btn-primary" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post btn btn-primary" %>
-          </div>
+          <%= link_to "ログイン" , new_user_session_path, class: "nav-link" %>
+        </li>
 
-          </div>
+        <li class="nav-item">
+
+          <%= link_to "新規登録" , new_user_registration_path, class: "nav-link" %>
+        </li>
         <% end %>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-      </div>
+
+
+
+
     </header>
+
+
+
     <%= yield %>
 
-        <footer>
-      <p>
+        <footer class="footer">
+        <div class ="container">
+      <p class="text-muted">
         Copyright AwaTech 2022.
       </p>
+      </div>
     </footer>
   </body>
 </html>
