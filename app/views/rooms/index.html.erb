@@ -1,0 +1,17 @@
+<div class="container">
+
+<% @another_entries.each do |entry| %>
+  <%= link_to room_path(entry.room) do %>
+  <div class="card mb-4">
+
+  <div class= "card-body">
+  <p class="card-text"><%= entry.user.name%>
+  さんとのメッセージ
+  </p>
+  </div>
+  </div>
+
+  <% end %>
+<% end %>
+
+</div>
