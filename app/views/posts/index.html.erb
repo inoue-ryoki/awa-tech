@@ -1,7 +1,5 @@
 <div class = "container">
-<div class = "post_button">
-<%= link_to "投稿する",new_post_path,{class:"btn btn-primary"}%>
-</div>
+
 <div class="jumbotron text-center hero">
 <h1>徳島のプログラミング教室</h1>
 
@@ -14,8 +12,12 @@
 
   <h2 class="school-list text-center">教室情報</h2>
 
+  <div class = "post_button">
+<%= link_to "投稿する",new_post_path,{class:"btn btn-primary"}%>
+</div>
 
- <div class="row row-cols-auto">
+
+ <div class="row row-cols-auto mb-5">
  <% @posts.each do |post| %>
  <div class="col-lg-4 col-md-6 offset-2">
 <%= link_to(user_path(post.user_id), class: 'list-content text-decoration-none' ) do%>
@@ -25,9 +27,9 @@
   <%= image_tag post.image.variant(resize: '300x200' ), class: 'card-img-top' if post.image.attached? %>
 	<div class="card-body">
 
-    <h3 class="card-title">教室名:<%= post.user.school_name %></h3>
+    <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
 
-          <p class="card-text"><%= post.text %></p>
+          <p class="card-text text-dark"><%= post.text %></p>
 	</div>
 </div>
 

@@ -14,11 +14,14 @@ class UsersController < ApplicationController
 def show
   @user = User.find(params[:id])
 
-      @currentUserEntry=Entry.where(user_id: current_user&.id)
+    @currentUserEntry=Entry.where(user_id: current_user&.id)
+    # ログインしているユーザーの情報取得
     @userEntry=Entry.where(user_id: @user.id)
+    # メッセージ相手のユーザーの情報を取得
     if @user.id == current_user&.id
+      # ユーザーのidとログインしているidが同じなら表示しない
     else
-      @currentUserEntry.each do |cu|
+     @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id then
             @isRoom = true
@@ -32,7 +35,7 @@ def show
         @entry = Entry.new
       end
     end
-  end
+ end
 
   private
 

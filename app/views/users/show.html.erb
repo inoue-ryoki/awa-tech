@@ -16,6 +16,7 @@
 
 <% else %>
   <% if @isRoom == true %>
+  <%# 既に部屋は存在しているかどうか %>
     <p class="btn btn-light"><a href="/rooms/<%= @roomId %>">チャットへ</a></p>
   <% else %>
     <%= form_for @room do |f| %>
