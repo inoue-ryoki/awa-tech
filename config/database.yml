@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: awa_tech_production
-  username: awa_tech
-  password: <%= ENV['AWA_TECH_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
