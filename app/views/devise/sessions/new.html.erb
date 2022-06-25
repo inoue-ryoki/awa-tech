@@ -1,33 +1,36 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
+<div class='account-page'>
+
     <div class='account-page__inner--left account-page__header'>
       <h2>Log in</h2>
       <h5>登録しているユーザーでログイン</h5>
       <%= render "devise/shared/links"%>
     </div>
-    <div class='account-page__inner--right user-form'>
+
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :email%>
+          <%= f.label :email,class: "form-label"%>
           </div>
           <div class='field-input'>
-            <%= f.email_field :email, autofocus: true%>
+            <%= f.email_field :email, autofocus: true,class: "form-control w-50"%>
+
           </div>
           <div class='field'>
             <div class='field-label'>
-              <%= f.label :password%>
+            <%= f.label :password,class: "form-label"%>
               <i>(英数字6文字以上)</i>
             </div>
             <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
+
+
+             <%= f.password_field :password, autocomplete: "off",class: "form-control w-50"%>
             </div>
           </div>
           <div class='actions'>
-            <%= f.submit "Log in", class: 'btn'%>
+            <%= f.submit "Log in", class: 'btn btn-primary'%>
           </div>
         </div>
       <% end %>
-    </div>
-  </div>
+
+
 </div>
