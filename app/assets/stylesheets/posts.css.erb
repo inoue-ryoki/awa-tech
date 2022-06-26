@@ -11,17 +11,34 @@
   border: solid 1px black;
 }
 
-.img-fluid {
+.img {
+   background: url(<%= asset_path'school.jpg'%>);
 
+  height: 100vh;
 
 
   background-size: cover;
-  height: 800px;
+ background-position: center;
+
+
+ background-color:rgba(255,255,255,0.6);
+ background-blend-mode:lighten;
+
 
 }
 
-.jumbotron {
+.jumbotron h1{
+
+
+
   padding: 6rem 2rem;
+
+}
+
+
+.jumbotron h3{
+  padding-top: 8rem;
+
 }
 
 .school-list{

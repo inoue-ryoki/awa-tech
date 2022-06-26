@@ -1,8 +1,14 @@
-<div class = "container">
+<div class = "wrap">
 
-<div class="jumbotron text-center hero">
-<h1>徳島のプログラミング教室</h1>
-  <%= image_tag 'school.jpg', class: 'img-fluid' %>
+<div class="jumbotron text-center hero img">
+<h1>気になる教室の先生とワンクリックでチャットができる!</h1>
+<h2>~あなたにぴったりの教室が見つかる~</h2>
+<h3 class="mt-5">徳島のプログラミング教室検索サイト</h3>
+
+  <%#= image_tag 'school.jpg', class: 'img-fluid' %>
+
+  <%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-primary mt-5"%>
+        </li>
 
 </div>
 
@@ -13,9 +19,13 @@
 
   <h2 class="school-list text-center">教室情報</h2>
 
-  <div class = "post_button">
-<%= link_to "投稿する",new_post_path,{class:"btn btn-primary"}%>
+       <div class = "post_button">
+<%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
 </div>
+
+
+
+
 
 
  <div class="row row-cols-auto mb-5">

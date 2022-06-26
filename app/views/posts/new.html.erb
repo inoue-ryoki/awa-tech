@@ -5,12 +5,16 @@
     <%= form.label :image, "画像" %><br />
     <%= form.file_field :image, id:"post_image" %>
   </div>
+  <div class="form-label mt-5">
   <label for="exampleFormControlTextarea1" class="form-label">記事内容</label>
+  </div>
 
 
-    <%= form.text_area :text, placeholder: "text", rows: "3" , class:"form-control",id: "exampleFormControlTextarea1"%>
+    <%= form.text_area :text, placeholder: "text", rows: "3" , class:"form-control mt-1",id: "exampleFormControlTextarea1"%>
 
-    <%= form.submit "SEND" ,class:"btn btn-primary" %>
+    <div class="text-center mt-5">
+    <%= form.submit "教室の掲載を依頼" ,class:"btn btn-success" %>
+    </div>
 
 </div>
 
