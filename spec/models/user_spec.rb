@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
-      sleep 0.3
+    sleep 0.3
   end
 
-   describe 'ユーザー新規登録' do
+  describe 'ユーザー新規登録' do
     context '新規登録できる場合' do
       it 'nameとemail、passwordとpassword_confirmation,school_name,address,telephone_number,teacher_name,school_content,imageが存在すれば登録できる' do
         expect(@user).to be_valid
@@ -21,7 +21,6 @@ RSpec.describe User, type: :model do
         @user.school_name = ''
         expect(@user).to be_valid
       end
-
 
       it 'addressが空でも登録できる' do
         @user.address = ''
@@ -41,9 +40,6 @@ RSpec.describe User, type: :model do
         @user.school_content = ''
         expect(@user).to be_valid
       end
-
-
-
     end
     context '新規登録できない場合' do
       it 'nameが空では登録できない' do
@@ -87,9 +83,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
-
     end
- end
-
-
+  end
 end
