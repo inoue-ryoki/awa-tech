@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new,:destroy]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
+
+
   end
 
   def new
@@ -15,6 +17,14 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+
+ def destroy
+    post = Post.find(params[:id])
+      if post.destroy
+      redirect_to root_path
     end
   end
 

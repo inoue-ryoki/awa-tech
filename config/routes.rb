@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'posts/index'
 root to: "posts#index"
-resources :posts, only: [:index, :new, :create]
+resources :posts, only: [:index, :new, :create, :destroy]
 resources :users, only: [:edit, :update, :show] do
   member do
     get :follows, :followers

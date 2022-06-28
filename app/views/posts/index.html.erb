@@ -36,16 +36,25 @@
 <div class="card" style="width: 18rem;">
 
   <%= image_tag post.image.variant(resize: '300x200' ), class: 'card-img-top' if post.image.attached? %>
+
 	<div class="card-body">
 
     <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
 
           <p class="card-text text-dark"><%= post.text %></p>
+
+    <% if post.user_id == current_user&.id %>
+   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn btn-danger", data: {confirm: "削除しますか？"} %>
+
+ <% end %>
 	</div>
 </div>
 
-<% end %>
+
 </div>
+  <% end %>
+
+
   <% end %>
 </div>
 
