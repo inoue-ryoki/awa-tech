@@ -83,6 +83,13 @@ https://docs.google.com/spreadsheets/d/1j_iKoNoY0_ER8la6c4Mu0XfEp4xleKqHMGwlQ-uu
 - has_many :rooms, through: :entries
 - has_many :messages
 
+## relationships テーブル
+
+| Column     | Type       | Options           |
+| ------     | ------     | ------------------|
+| follower   | references | foreign_key: true |
+| followed   | references | foreign_key: true |
+
 
 
 ## posts テーブル
