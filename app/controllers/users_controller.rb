@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
+   @following_users = @user.following_user
+  @follower_users = @user.follower_user
+
+
     @currentUserEntry = Entry.where(user_id: current_user&.id)
     # ログインしているユーザーの情報取得
     @userEntry = Entry.where(user_id: @user.id)
@@ -35,6 +39,17 @@ class UsersController < ApplicationController
       end
     end
   end
+
+
+   def follows
+  user = User.find(params[:id])
+  @users = user.following_user
+end
+
+  def followers
+  user = User.find(params[:id])
+  @users = user.follower_user
+end
 
   private
 
