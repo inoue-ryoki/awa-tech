@@ -42,11 +42,19 @@
     <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
 
           <p class="card-text text-dark"><%= post.text %></p>
+           <% end %>
 
     <% if post.user_id == current_user&.id %>
-   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn btn-danger", data: {confirm: "削除しますか？"} %>
+    <div class=" d-flex justify-content-end">
+   <div id="three_button">︙
 
- <% end %>
+   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden",id:"delete", data: {confirm: "削除しますか？"} %>
+
+   </div>
+   </div>
+
+
+
 	</div>
 </div>
 
