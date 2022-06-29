@@ -7,7 +7,9 @@ class Post < ApplicationRecord
 
     def self.search(search)
     if search != ""
-      Post.where('text LIKE(?)', "%#{search}%")
+
+
+    Post.joins(:user).merge(Post.where('text LIKE(?)', "%#{search}%")).or(Post.joins(:user).merge(User.where('school_name LIKE(?)', "%#{search}%")))
 
 
 
