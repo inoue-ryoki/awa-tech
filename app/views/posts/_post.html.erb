@@ -1,0 +1,31 @@
+ <div class="col-lg-4 col-md-6 offset-2">
+<%= link_to(user_path(post.user_id), class: 'list-content text-decoration-none' ) do%>
+
+<div class="card" style="width: 18rem;">
+
+  <%= image_tag post.image.variant(resize: '300x200' ), class: 'card-img-top' if post.image.attached? %>
+
+	<div class="card-body">
+
+    <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
+
+          <p class="card-text text-dark"><%= post.text %></p>
+           <% end %>
+
+    <% if post.user_id == current_user&.id %>
+    <div class=" d-flex justify-content-end">
+   <div id="three_button">︙
+
+   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden_img",id:"delete", data: {confirm: "削除しますか？"} %>
+
+   </div>
+   </div>
+     <% end %>
+
+
+
+	</div>
+</div>
+
+
+</div>

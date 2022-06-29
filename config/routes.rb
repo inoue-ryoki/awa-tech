@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'posts/index'
 root to: "posts#index"
-resources :posts, only: [:index, :new, :create, :destroy]
+resources :posts, only: [:index, :new, :create, :destroy] do
+   collection do
+      get 'search'
+    end
+end
 resources :users, only: [:edit, :update, :show] do
   member do
     get :follows, :followers

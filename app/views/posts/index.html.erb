@@ -19,6 +19,19 @@
 
   <h2 class="school-list text-center">教室情報</h2>
 
+
+
+  <div class="search_form">
+    <%= form_with url: search_posts_path, local: true, method: :get do |f| %>
+   <div class="input-group">
+      <%= f.text_field :keyword, class: "form-control",placeholder:"キーワードを入力" %>
+      <%= button_tag type:f.submit, class:"btn btn-outline-success" do %>
+          検索 <i class="fas fa-search"></i>
+          <% end %>
+    </div>
+    <% end %>
+  </div>
+
        <div class = "post_button">
 <%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
 </div>
@@ -30,37 +43,9 @@
 
  <div class="row row-cols-auto mb-5">
  <% @posts.each do |post| %>
- <div class="col-lg-4 col-md-6 offset-2">
-<%= link_to(user_path(post.user_id), class: 'list-content text-decoration-none' ) do%>
-
-<div class="card" style="width: 18rem;">
-
-  <%= image_tag post.image.variant(resize: '300x200' ), class: 'card-img-top' if post.image.attached? %>
-
-	<div class="card-body">
-
-    <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
-
-          <p class="card-text text-dark"><%= post.text %></p>
-           <% end %>
-
-    <% if post.user_id == current_user&.id %>
-    <div class=" d-flex justify-content-end">
-   <div id="three_button">︙
-
-   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden",id:"delete", data: {confirm: "削除しますか？"} %>
-
-   </div>
-   </div>
+ <%= render partial: "post", locals: { post: post } %>
 
 
-
-	</div>
-</div>
-
-
-</div>
-  <% end %>
 
 
   <% end %>
