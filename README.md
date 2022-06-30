@@ -104,9 +104,6 @@ https://docs.google.com/spreadsheets/d/1j_iKoNoY0_ER8la6c4Mu0XfEp4xleKqHMGwlQ-uu
 
 ## rooms テーブル
 
-| Column | Type       | Options                        |
-| ------ | ------     | -------------------------------|
-| user   | references | null: false, foreign_key: true |
 
 ### Association
 
