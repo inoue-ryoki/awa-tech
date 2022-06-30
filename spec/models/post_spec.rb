@@ -6,16 +6,11 @@ RSpec.describe Post, type: :model do
     sleep 0.3
   end
 
-   describe '教室情報の投稿' do
+  describe '教室情報の投稿' do
     context '教室情報の投稿ができる場合' do
       it 'textとimageが空でなければ投稿できる' do
         expect(@post).to be_valid
       end
-
-
-
-
-
     end
     context '教室情報の投稿ができない場合' do
       it 'textが空では登録できない' do
@@ -33,18 +28,13 @@ RSpec.describe Post, type: :model do
         @post.image = nil
         @post.valid?
         expect(@post.errors.full_messages).to include("Image can't be blank", "Text can't be blank")
-
       end
 
-        it 'userが紐付いていないと保存できない' do
+      it 'userが紐付いていないと保存できない' do
         @post.user = nil
         @post.valid?
         expect(@post.errors.full_messages).to include('User must exist')
-
       end
-
-
-
     end
   end
 end
