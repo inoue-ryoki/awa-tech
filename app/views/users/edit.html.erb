@@ -1,80 +1,122 @@
-<div class='account-page' id='account-page'>
+<div class="cotainer mt-5 mb-5">
   <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Edit Account</h2>
+
       <h5>アカウントの編集</h5>
-      <%= link_to "ログアウト", "#", class: 'btn'%>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
-    </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
-        <%= f.file_field :image, class: 'hidden' %>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :name%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :name, autofocus: true%>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email%>
-          </div>
-        </div>
-           <div class='field'>
-          <div class='field-label'>
-            <%= f.label :school_name%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :school_name%>
-          </div>
-        </div>
-
-          <div class='field'>
-          <div class='field-label'>
-            <%= f.label :address%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :address%>
-          </div>
-        </div>
-
-          <div class='field'>
-          <div class='field-label'>
-            <%= f.label :telephone_number%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :telephone_number%>
-          </div>
-        </div>
-
-             <div class='field'>
-          <div class='field-label'>
-            <%= f.label :teacher_name%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :teacher_name%>
-          </div>
-        </div>
-
-             <div class='field'>
-          <div class='field-label'>
-            <%= f.label :school_content%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :school_content%>
-          </div>
-        </div>
 
 
-        <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
-        </div>
-      <% end %>
-    </div>
+     <%= form_with model: current_user, local: true do |f|%>
+
+
+      <div class="field">
+   <%= f.file_field :image, class: 'hidden' %>
   </div>
-</div>
+  <div class="row">
+        <div class='form-group col'>
+          <div class='form-label'>
+            <%= f.label :name,class: "form-label"%>
+          </div>
+
+            <%= f.text_field :name, autofocus: true,class: "form-control" %>
+
+        </div>
+        <div class='field col'>
+          <div class='form-label'>
+            <%= f.label :email,class: "form-label"%>
+          </div>
+          <div class='field-input'>
+            <%= f.email_field :email,class: "form-control"%>
+          </div>
+        </div>
+
+  </div>
+   <div class="row">
+        <div class='form-group col'>
+          <div class='form-label'>
+         <%= f.label :password,class: "form-label"%>
+            <i>(英数字6文字以上)</i>
+          </div>
+
+
+             <%= f.password_field :password, autocomplete: "off",class: "form-control"%>
+        </div>
+        <div class='field col'>
+          <div class='form-label'>
+             <%= f.label :password_confirmation,class: "form-label"%>
+          </div>
+          <div class='field-input'>
+
+           <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control"%>
+          </div>
+        </div>
+
+    </div>
+    <h6 class="mt-5">※ここから下記は教室の掲載したい方のみ入力</h6>
+
+      <div class="row">
+        <div class='form-group col'>
+          <div class='form-label'>
+          <%= f.label :school_name,class: "form-label"%>
+              <i>教室名 (※任意)</i>
+          </div>
+
+        <%= f.text_field :school_name, autofocus: true,class: "form-control"%>
+        </div>
+        <div class='field col'>
+          <div class='form-label'>
+                <%= f.label :address,class: "form-label"%>
+               <i>教室の住所 (※任意)</i>
+          </div>
+          <div class='field-input'>
+          <%= f.text_field :address, autofocus: true,class: "form-control"%>
+          </div>
+        </div>
+
+      </div>
+
+         <div class="row">
+        <div class='form-group col'>
+          <div class='form-label'>
+          <%= f.label :telephone_number,class: "form-label"%>
+              <i>教室の電話番号 (※任意)</i>
+          </div>
+           <%= f.text_field :telephone_number, autofocus: true,class: "form-control"%>
+
+
+        </div>
+        <div class='field col'>
+          <div class='form-label'>
+         <%= f.label :teacher_name,class: "form-label"%>
+              <i>教室長の名前 (※任意)</i>
+          </div>
+          <div class='field-input'>
+
+           <%= f.text_field :teacher_name, autofocus: true,class: "form-control"%>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+            <div class='field'>
+
+              <div class='form-label'>
+            <%= f.label :school_content,class: "form-label"%>
+            <i>教室の内容 (※任意)</i>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :school_content, autofocus: true,class: "form-control"%>
+          </div>
+        </div>
+
+
+        <div class='text-right'>
+          <%= f.submit "Update", class: 'btn btn-primary mt-2 mb-5'%>
+        </div>
+      </div>
+    <% end %>
+
+    </div>

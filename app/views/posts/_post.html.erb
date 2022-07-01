@@ -1,4 +1,4 @@
- <div class="col-lg-4 col-md-6 offset-2">
+ <div class="col-lg-4 col-md-6 offset-2 position-relative">
 <%= link_to(user_path(post.user_id), class: 'list-content text-decoration-none' ) do%>
 
 <div class="card" style="width: 18rem;">
@@ -12,20 +12,22 @@
           <p class="card-text text-dark"><%= post.text %></p>
            <% end %>
 
-    <% if post.user_id == current_user&.id %>
-    <div class=" d-flex justify-content-end">
-   <div id="three_button">︙
 
-   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden_img",id:"delete", data: {confirm: "削除しますか？"} %>
-
-   </div>
-   </div>
-     <% end %>
 
 
 
 	</div>
+
 </div>
+    <% if post.user_id == current_user&.id %>
+    <div class="delete_button d-inline  justify-content-end position-absolute">
+   <div class="three_button">︙
+
+   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden_img delete", data: {confirm: "削除しますか？"} %>
+
+   </div>
+   </div>
+     <% end %>
 
 
 </div>
