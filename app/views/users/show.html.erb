@@ -1,5 +1,7 @@
-<div class="container">
+<div class="container mypage">
+<div class="myname">
 <h3><%= @user.name%>さんのマイページ</h3>
+</div>
 
 
 
@@ -20,6 +22,7 @@
 
 <% end %>
 <% end %>
+   <br class="d-sm-none" />
 
      <%= link_to follows_user_path(@user),class: "text-decoration-none" do %>
      <div class="btn btn-secondary">フォロー<%= @following_users.count %></div>
@@ -37,9 +40,9 @@
 <% if @user.id == current_user&.id %>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
- <%= link_to "編集", edit_user_path(@user.id), class: "post btn btn-outline-primary" %>
+ <%= link_to "プロフィール編集", edit_user_path(@user.id), class: "post btn btn-outline-info" %>
 
-  <%= link_to "DM一覧", rooms_path, class: "post btn btn-outline-primary" %>
+  <%= link_to "DM一覧", rooms_path, class: "post btn btn-outline-info" %>
 
 
  </div>

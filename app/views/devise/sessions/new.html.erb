@@ -1,10 +1,10 @@
-<div class='account-page'>
+<div class='container login'>
 
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Log in</h2>
+
+
       <h5>登録しているユーザーでログイン</h5>
       <%= render "devise/shared/links"%>
-    </div>
+
 
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
         <div class='field'>
@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class='actions'>
-            <%= f.submit "Log in", class: 'btn btn-primary'%>
+            <%= f.submit "ログイン", class: 'btn btn-warning mt-2'%>
           </div>
         </div>
       <% end %>

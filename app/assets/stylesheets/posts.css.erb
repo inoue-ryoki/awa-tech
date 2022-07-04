@@ -12,42 +12,35 @@
 }
 
 .img {
-   background: url(<%= asset_path'school.jpg'%>);
-
-  height: 100vh;
-
-
-  background-size: cover;
- background-position: center;
-
-
- background-color:rgba(255,255,255,0.6);
- background-blend-mode:lighten;
-
-
-}
+   background: url(<%= asset_path'school2.jpg'%>);
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+   background-color:rgba(255,255,255,0.6);
+   background-blend-mode:lighten;
+      }
 
 
 .jumbotron h1{
-
-
-
-  padding: 6rem 2rem;
-
+ padding: 6rem 2rem;
 }
 
 
 .jumbotron h3{
   padding-top: 8rem;
-
 }
 
 .school-list{
-  margin: 40px;
+  margin: 40px auto;
+  width: 50%;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
 }
+
 .post_text {
   font-size: 24px;
-
 }
 
 .post_text p {
@@ -85,4 +78,8 @@ a {
 .preview-image{
   width: 200px;
   height: 200px;
+}
+
+.school_content{
+  margin-bottom: 200px;
 }
