@@ -27,6 +27,17 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
+   def guest_sign_in
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = "111111"
+
+       user.name = "ゲスト"
+
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+
   private
 
   def post_params

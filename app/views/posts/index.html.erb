@@ -6,8 +6,10 @@
 <h3 class="mt-5">徳島のプログラミング教室検索サイト</h3>
 
 
+
   <% if user_signed_in? %>
   <% else %>
+
 
   <%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-warning mt-sm-5"%>
         <% end %>
