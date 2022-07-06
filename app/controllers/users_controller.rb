@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :show, :follows, :followers]
   def edit
-   @user = User.find(params[:id])
   end
 
   def update
@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-
     @following_users = @user.following_user
     @follower_users = @user.follower_user
 
@@ -43,18 +41,21 @@ class UsersController < ApplicationController
   def follows
     user = User.find(params[:id])
     @users = user.following_user
-    @user = User.find(params[:id])
   end
 
   def followers
     user = User.find(params[:id])
     @users = user.follower_user
-    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :school_name, :address, :telephone_number, :teacher_name, :school_content, :image)
+    params.require(:user).permit(:name, :email, :school_name, :address, :telephone_number, :teacher_name, :school_content,
+                                 :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
