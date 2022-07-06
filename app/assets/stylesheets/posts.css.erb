@@ -18,16 +18,23 @@
    background-position: center;
    background-color:rgba(255,255,255,0.6);
    background-blend-mode:lighten;
+   background-attachment: fixed;
       }
 
 
 .jumbotron h1{
  padding: 6rem 2rem;
+ text-shadow: 0 0 5px #ffffff;
 }
 
-
 .jumbotron h3{
-  padding-top: 8rem;
+  padding-top: 4rem;
+}
+
+@media(min-width: 640px) {
+ .jumbotron h3{
+  padding-top: 15rem;
+}
 }
 
 .school-list{
