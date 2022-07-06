@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def edit
+   @user = User.find(params[:id])
   end
 
   def update
@@ -42,11 +43,13 @@ class UsersController < ApplicationController
   def follows
     user = User.find(params[:id])
     @users = user.following_user
+    @user = User.find(params[:id])
   end
 
   def followers
     user = User.find(params[:id])
     @users = user.follower_user
+    @user = User.find(params[:id])
   end
 
   private
