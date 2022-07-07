@@ -46,3 +46,16 @@
   margin: 0;
   padding: 0;
 }
+
+
+@media(max-width: 640px) {
+  .follow_btn {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .chat_btn {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
