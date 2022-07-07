@@ -1,22 +1,18 @@
  <div class="col-lg-4 col-md-6 offset-2 position-relative">
 <%= link_to(user_path(post.user_id), class: 'list-content text-decoration-none' ) do%>
 
-<div class="card" style="width: 18rem;">
+<div class="card mt-5" style="width: 18rem;">
 
   <%= image_tag post.image.variant(resize: '300x200' ), class: 'card-img-top' if post.image.attached? %>
 
 	<div class="card-body">
 
-    <h3 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
+    <h5 class="card-title text-dark">教室名:<%= post.user.school_name %></h3>
 
           <p class="card-text text-dark"><%= post.text %></p>
+          <p class="card-text text-dark">住所:<%= post.user.address %></p>
            <% end %>
-
-
-
-
-
-	</div>
+    </div>
 
 </div>
     <% if post.user_id == current_user&.id %>

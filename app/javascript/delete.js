@@ -8,28 +8,13 @@ window.addEventListener('load', function () {
 
       for (i = 0; i < delete_button.length; i++) {
 
-
         if (delete_button[i].getAttribute("style") == "display:block;") {
           delete_button[i].removeAttribute("style", "display:block;");
-
-
-
-
         } else {
           delete_button[i].setAttribute("style", "display:block;");
-
-
-
-
         }
-
-
-
-
       };
     });
-
-
   };
 
 });
