@@ -20,18 +20,21 @@ class UsersController < ApplicationController
     @userEntry = Entry.where(user_id: @user.id)
     # メッセージ相手のユーザーの情報を取得
     if @user.id == current_user&.id
-      # ユーザーのidとログインしているidが同じなら表示しない
+      # ユーザーのidとログインしているidが同じでなければ実行
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id
+            # 既にroomが作成されている場合
             @isRoom = true
             @roomId = cu.room_id
+            # 既に作成されているroom_idを特定
           end
         end
       end
       if @isRoom
       else
+        # roomを新しく作成する記述
         @room = Room.new
         @entry = Entry.new
       end
