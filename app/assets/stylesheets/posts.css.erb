@@ -78,8 +78,32 @@ a {
 
 .delete_button{
   position: absolute;
-  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-right: 150px;
+  padding-bottom: 10px;
 }
+@media(max-width: 990px) {
+.delete_button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-right: 100px;
+  padding-bottom: 10px;
+}
+}
+
+@media(max-width: 640px) {
+.delete_button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-right: 50px;
+  padding-bottom: 10px;
+}
+}
+
+
 
 .hidden_img{
   display: none;
