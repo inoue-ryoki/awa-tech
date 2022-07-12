@@ -67,14 +67,19 @@ https://docs.google.com/spreadsheets/d/1j_iKoNoY0_ER8la6c4Mu0XfEp4xleKqHMGwlQ-uu
 
 
 ## 実装した機能についてのGIF
+### DM機能
+[![Image from Gyazo](https://i.gyazo.com/1c7046ceab98fba31db588dd244b9a5f.gif)](https://gyazo.com/1c7046ceab98fba31db588dd244b9a5f)
+
+### 教室情報掲載機能
+[![Image from Gyazo](https://i.gyazo.com/59ad6b40162da583fe6de61ec79bb776.gif)](https://gyazo.com/59ad6b40162da583fe6de61ec79bb776)
 
 ## 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/3cac493de6aa2cca6797dc8ab717dde2.png)](https://gyazo.com/3cac493de6aa2cca6797dc8ab717dde2)
+[![Image from Gyazo](https://i.gyazo.com/9913f295efe447b7c180058275696c26.png)](https://gyazo.com/9913f295efe447b7c180058275696c26)
 
 
 
 ## DB設計
-[![Image from Gyazo](https://i.gyazo.com/a554b890c7cdf9b7cd948ba272e82f49.png)](https://gyazo.com/a554b890c7cdf9b7cd948ba272e82f49)
+[![Image from Gyazo](https://i.gyazo.com/1c758d570bdc6c259c56b3de78c0b150.png)](https://gyazo.com/1c758d570bdc6c259c56b3de78c0b150)
 
 
 ## users テーブル
