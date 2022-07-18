@@ -24,12 +24,12 @@ class UsersController < ApplicationController
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id
-            # 既にroomが作成されている場合
-            @isRoom = true
-            @roomId = cu.room_id
-            # 既に作成されているroom_idを特定
-          end
+          next unless cu.room_id == u.room_id
+
+          # 既にroomが作成されている場合
+          @isRoom = true
+          @roomId = cu.room_id
+          # 既に作成されているroom_idを特定
         end
       end
       if @isRoom
