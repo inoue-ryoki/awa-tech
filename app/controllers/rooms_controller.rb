@@ -4,7 +4,9 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create
     @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
+    # @roomに紐づくidと現在ログインしているユーザーのidを保存させるための記述
     @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(room_id: @room.id))
+    # 相手の情報を保存
     redirect_to "/rooms/#{@room.id}"
   end
 
@@ -22,9 +24,13 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     if Entry.where(user_id: current_user.id, room_id: @room.id).present?
+      # 現在ログインしているユーザーidとそれに紐づくroomidがあるのか条件分岐している
       @messages = @room.messages
+      # メッセージを表示させる
       @message = Message.new
+      # 新しいメッセージを作成する
       @entries = @room.entries
+      # ユーザーの名前などを表示させるための記述
     else
       redirect_back(fallback_location: root_path)
     end

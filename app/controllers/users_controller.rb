@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
+      # 二つのユーザー情報をeachで取り出して、同じroom_idが存在するか調べる
           next unless cu.room_id == u.room_id
 
           # 既にroomが作成されている場合
