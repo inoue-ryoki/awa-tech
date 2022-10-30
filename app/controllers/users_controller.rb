@@ -13,8 +13,9 @@ class UsersController < ApplicationController
 
   def show
     @following_users = @user.following_user
+    #フォローしている人の数を表示するための記述
     @follower_users = @user.follower_user
-
+    #フォローされている人の数を表示するための記述
     @currentUserEntry = Entry.where(user_id: current_user&.id)
     # ログインしているユーザーの情報取得
     @userEntry = Entry.where(user_id: @user.id)
@@ -42,11 +43,13 @@ class UsersController < ApplicationController
     end
   end
 
+  #フォロー一覧で表示するためのメソッド
   def follows
     user = User.find(params[:id])
     @users = user.following_user
   end
 
+  #フォロワー一覧で表示するためのメソッド
   def followers
     user = User.find(params[:id])
     @users = user.follower_user
