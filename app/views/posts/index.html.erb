@@ -7,12 +7,12 @@
 
 
 
-  <% if user_signed_in? %>
-  <% else %>
+<% if user_signed_in? %>
 
+<% else %>
 
-  <%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-warning mt-sm-5"%>
-        <% end %>
+<%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-warning mt-sm-5"%>
+<% end %>
 
 </div>
 
@@ -25,11 +25,9 @@
 
   <h2 class="school-list text-center">教室情報</h2>
 
-
-
   <div class="search_form">
     <%= form_with url: search_posts_path, local: true, method: :get do |f| %>
-   <div class="input-group">
+  <div class="input-group">
       <%= f.text_field :keyword, class: "form-control",placeholder:"例） 地域名、教室名" %>
       <%= button_tag type:f.submit, class:"btn btn-outline-success" do %>
           検索 <i class="fas fa-search"></i>
@@ -38,8 +36,8 @@
     <% end %>
   </div>
 
-       <div class = "post_button">
-<%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
+  <div class = "post_button">
+  <%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
 </div>
 
 
@@ -47,15 +45,11 @@
 
 
 
- <div class="row row-cols-auto school_content">
- <% @posts.each do |post| %>
- <%= render partial: "post", locals: { post: post } %>
-
-
-
-
+<div class="row row-cols-auto school_content">
+  <% @posts.each do |post| %>
+  <%= render partial: "post", locals: { post: post } %>
   <% end %>
 </div>
- <%= paginate @posts %>
+<%= paginate @posts %>
 
- </div>
+</div>
