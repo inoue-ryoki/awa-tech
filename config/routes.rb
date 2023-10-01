@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :information
   get 'relationships/followings'
   get 'relationships/followers'
   devise_for :users
