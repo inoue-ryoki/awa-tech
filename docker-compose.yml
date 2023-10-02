@@ -4,11 +4,11 @@ services:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: docker_development
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_USER: hogehoge
-      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
     ports:
-      - "3306:3306" # ホストからゲストへポートフォワード
+      - "3309:3306" # ホストからゲストへポートフォワード
   web:
     build:
       context: .
