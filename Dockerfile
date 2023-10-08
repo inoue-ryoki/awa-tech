@@ -1,7 +1,7 @@
 FROM ruby:2.6.5
 # nodeのバージョンを揃えるといけそう？
-# RUN apt-get update && apt-get install -y nodejs npm && npm install n -g && n 14.21.3 --no-install-recommends && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y nodejs npm --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nodejs npm && npm install n -g && n 14.21.3 --no-install-recommends && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y nodejs npm --no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y mariadb-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 # install yarn
