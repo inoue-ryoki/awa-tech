@@ -25,8 +25,30 @@ http://awa-tech-aws.com/
 - インフラ・開発環境 
   - AWS(VPC,EC2,S3,Route53)
   - Capistrano
+  - Docker
 - データベース
   - Mariadb
+
+## 開発方法
+  ①Dockerのインストール、このリポジトリをクローン
+
+  ②以下のコマンドをクローンしたディレクトリで打つ
+  ```
+  docker-compose build
+
+  docker-compose up -d
+
+  docker-compose run web rake db:create db:migrate
+
+  ```
+
+  ③http://localhost:3000/にアクセスする
+
+  ④開発終了時は以下のコマンドを打つ
+
+  ```
+  docker-compose down
+  ```
 
 
 ## アプリケーションの利用方法
