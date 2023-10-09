@@ -42,7 +42,7 @@ http://awa-tech-aws.com/
 
   ```
 
-  ③http://localhost:3000/にアクセスする
+  ③http://localhost:3000/ にアクセスする
 
   ④開発終了時は以下のコマンドを打つ
 
