@@ -73,5 +73,6 @@ gem 'devise'
 gem 'pry-rails'
 
 gem "aws-sdk-s3", require: false
+gem 'jquery-rails'
 gem "gretel"
 gem 'kaminari'
