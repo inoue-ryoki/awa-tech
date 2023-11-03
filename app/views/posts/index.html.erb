@@ -36,6 +36,11 @@
     <% end %>
   </div>
 
+
+<ul class="js-messages">
+  <%= render partial: 'search_results', collection: @posts %>
+</ul>
+
   <div class = "post_button">
   <%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
 </div>
