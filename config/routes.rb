@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 root to: "posts#index"
 post '/posts/guest_sign_in', to: 'posts#guest_sign_in'
 resources :posts, only: [:index, :new, :create, :destroy] do
-   collection do
+    collection do
       get 'search'
+      get 'search_results'
     end
 end
 resources :users, only: [:edit, :update, :show] do
