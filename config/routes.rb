@@ -10,6 +10,7 @@ resources :posts, only: [:index, :new, :create, :destroy] do
       get 'search'
       get 'search_results'
     end
+    resource :favorites, only: [:create, :destroy]
 end
 resources :users, only: [:edit, :update, :show] do
   member do
