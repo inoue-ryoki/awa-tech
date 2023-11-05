@@ -8,15 +8,9 @@
         <p class="card-text text-dark">住所:<%= post.user.address %></p>
       <% end %>
     </div>
-    <% if post.favorited?(current_user) %>
-      <%= link_to post_favorites_path(post), method: :delete do %>
-        <span style="color:red;">❤︎</span>
-      <% end %>
-    <% else %>
-      <%= link_to post_favorites_path(post), method: :post do %>
-        <span style="color:black;">❤︎</span>
-      <% end %>
-    <% end %>
+    <div id="favorite_buttons_<%= post.id %>">
+      <%= render "favorites/favorites", post: post %>
+    </div>
 
 </div>
     <% if post.user_id == current_user&.id %>
