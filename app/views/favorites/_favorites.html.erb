@@ -1,9 +1,16 @@
 <% if post.favorited?(current_user) %>
-  <%= link_to post_favorites_path(post), method: :delete, remote: true, data: {"turbolinks" => false} do %>
+  <%= link_to post_favorites_path(post), method: :delete, class: :favorite, remote: true, data: {"turbolinks" => false} do %>
     <span style="color:red;">❤︎</span>
   <% end %>
 <% else %>
-  <%= link_to post_favorites_path(post), method: :post, remote: true, data: {"turbolinks" => false} do %>
+  <%= link_to post_favorites_path(post), method: :post, class: :favorite, remote: true, data: {"turbolinks" => false} do %>
     <span style="color:black;">❤︎</span>
   <% end %>
 <% end %>
+
+<script>
+// いいねが非同期にならないのでとりあえずの回避策
+$(".favorite").click(function(){
+    location.reload();
+})
+</script>
