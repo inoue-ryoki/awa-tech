@@ -14,6 +14,7 @@ resources :posts, only: [:index, :new, :create, :destroy] do
 end
 resources :users, only: [:edit, :update, :show] do
   member do
+    get :favorites
     get :follows, :followers
   end
   resource :relationships, only: [:create, :destroy]

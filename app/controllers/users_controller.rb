@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :show, :follows, :followers]
+  before_action :set_user, only: [:edit, :show, :follows, :followers, :favorites]
   def edit
   end
 
@@ -53,6 +53,12 @@ class UsersController < ApplicationController
   def followers
     user = User.find(params[:id])
     @users = user.follower_user
+  end
+
+  def favorites
+    @user = User.find(params[:id])
+    favorites_posts = Favorite.where(user_id: current_user&.id)
+    @posts = favorites_posts.map { |favorite| favorite.post }
   end
 
   private

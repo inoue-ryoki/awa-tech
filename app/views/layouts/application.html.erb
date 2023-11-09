@@ -4,82 +4,77 @@
     <title>AwaTech</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
 
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light p-4 bg-warning"style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+        <%= link_to "AwaTech" , root_path,class: "navbar-brand" %>
+        <i class="fas fa-desktop"></i>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
-     <header class="header">
-     <nav class="navbar navbar-expand-lg navbar-light p-4 bg-warning"style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-   <%= link_to "AwaTech" , root_path,class: "navbar-brand" %>
-   <i class="fas fa-desktop"></i>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+              <%= link_to "いいね一覧" , favorites_user_path(current_user), method: :get ,class: "nav-link active" %>
+              </li>
 
+              <li class="nav-item">
+              <%= link_to "ログアウト" , destroy_user_session_path, method: :delete ,class: "nav-link active" %>
+              </li>
 
+              <li class="nav-item">
+                <%= link_to "#{current_user.name}さんのマイページ" , user_path(current_user.id), class: "nav-link active" %>
+              </li>
+            <% end %>
 
+            <% if user_signed_in? %>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'ゲストログイン（閲覧用）', posts_guest_sign_in_path, class: "btn btn-info", method: :post %>
+              </li>
+              <li class="nav-item">
+              <%= link_to "ログイン" , new_user_session_path, class: "nav-link" %>
+              </li>
 
-      <ul class="navbar-nav  mb-2 mb-lg-0">
-         <% if user_signed_in? %>
-        <li class="nav-item">
-        <%= link_to "ログアウト" , destroy_user_session_path, method: :delete ,class: "nav-link active" %>
-         </li>
-
-          <li class="nav-item">
-         <%= link_to "#{current_user.name}さんのマイページ" , user_path(current_user.id), class: "nav-link active" %>
-          </li>
-
-           <% end %>
-           <% if user_signed_in? %>
-           <% else %>
-       <li class="nav-item">
-         <%= link_to 'ゲストログイン（閲覧用）', posts_guest_sign_in_path, class: "btn btn-info", method: :post %>
-         </li>
-        <li class="nav-item">
-
-          <%= link_to "ログイン" , new_user_session_path, class: "nav-link" %>
-        </li>
-
-
-        <li class="nav-item">
-         <%= link_to "新規登録" , new_user_registration_path, class: "nav-link" %>
-        </li>
-        <% end %>
-      </ul>
-
-    </div>
-  </div>
-</nav>
+              <li class="nav-item">
+              <%= link_to "新規登録" , new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 
 
 
 
     </header>
-   <%= breadcrumbs separator: " &rsaquo; " %>
+  <%= breadcrumbs separator: " &rsaquo; " %>
 
+  <%= yield %>
 
-
-    <%= yield %>
-
-        <footer class="footer">
-        <div class ="container-footer">
-      <p class="text-muted">
+    <footer class="footer">
+      <div class ="container-footer">
+        <p class="text-muted">
         Copyright AwaTech 2022.
-      </p>
+        </p>
       </div>
     </footer>
   </body>

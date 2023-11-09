@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="mt-4">いいね一覧</h1>
+  <div class="row mt-4">
+    <% if @posts.present? %>
+      <% @posts.each do |post| %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
