@@ -11,19 +11,13 @@
     <div id="favorite_buttons_<%= post.id %>">
       <%= render "favorites/favorites", post: post %>
     </div>
-
 </div>
+
     <% if post.user_id == current_user&.id %>
-    <div class="delete_button d-inline  justify-content-end position-absolute">
-   <div class="three_button">︙
-
-
-   <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden_img delete", data: {confirm: "削除しますか？"} %>
-
-
-   </div>
-   </div>
-     <% end %>
-
-
+      <div class="delete_button d-inline  justify-content-end position-absolute">
+        <div class="three_button">︙
+        <%= link_to '削除', post_path(post.id), method: :delete,class:"btn-delete hidden_img delete", data: {confirm: "削除しますか？"} %>
+        </div>
+      </div>
+    <% end %>
 </div>
