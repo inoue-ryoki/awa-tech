@@ -1,60 +1,44 @@
 <div class = "wrap">
+  <div class="jumbotron text-center hero img">
+    <h1>気になる教室の先生とワンクリックでチャットができる!</h1>
+    <h2>~あなたにぴったりの教室が見つかる~</h2>
+    <h3 class="mt-pt-5">徳島のプログラミング教室検索サイト</h3>
 
-<div class="jumbotron text-center hero img">
-<h1>気になる教室の先生とワンクリックでチャットができる!</h1>
-<h2>~あなたにぴったりの教室が見つかる~</h2>
-<h3 class="mt-pt-5">徳島のプログラミング教室検索サイト</h3>
-
-
-
-<% if user_signed_in? %>
-
-<% else %>
-
-<%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-warning mt-sm-5"%>
-<% end %>
-
+    <% unless user_signed_in? %>
+      <%= link_to "今すぐ新規登録" , new_user_registration_path, class: "btn btn-warning mt-sm-5"%>
+    <% end %>
+  </div>
 </div>
-
-</div>
-
 
 <div class = "container">
-
   <% breadcrumb :root %>
 
   <h2 class="school-list text-center">教室情報</h2>
 
   <div class="search_form">
     <%= form_with url: search_posts_path, local: true, method: :get do |f| %>
-  <div class="input-group">
+    <div class="input-group">
       <%= f.text_field :keyword, class: "form-control",placeholder:"例） 地域名、教室名" %>
       <%= button_tag type:f.submit, class:"btn btn-outline-success" do %>
           検索 <i class="fas fa-search"></i>
-          <% end %>
+      <% end %>
     </div>
     <% end %>
   </div>
 
 
-<ul class="js-messages">
-  <%= render partial: 'search_results', collection: @posts %>
-</ul>
+  <ul class="js-messages">
+    <%= render partial: 'search_results', collection: @posts %>
+  </ul>
 
   <div class = "post_button">
-  <%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
-</div>
+    <%= link_to "教室の掲載したい人はこちら",new_post_path,{class:"btn btn-success"}%>
+  </div>
 
-
-
-
-
-
-<div class="row row-cols-auto school_content">
-  <% @posts.each do |post| %>
-  <%= render partial: "post", locals: { post: post } %>
-  <% end %>
-</div>
-<%= paginate @posts %>
-
+  <div class="row row-cols-auto school_content">
+    <% @posts.each do |post| %>
+    <%= render partial: "post", locals: { post: post } %>
+    <% end %>
+  </div>
+  <%= paginate @posts %>
 </div>
