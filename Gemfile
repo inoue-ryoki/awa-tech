@@ -80,3 +80,5 @@ gem "gretel"
 gem 'kaminari'
 
 gem 'dotenv-rails'
+gem 'geocoder'
+gem 'gon'

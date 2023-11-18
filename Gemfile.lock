@@ -131,8 +131,14 @@ GEM
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    geocoder (1.8.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     gretel (4.4.0)
       actionview (>= 5.1, < 7.1)
       railties (>= 5.1, < 7.1)
@@ -179,6 +185,7 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.5.2)
+    multi_json (1.15.0)
     mysql2 (0.5.4)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
@@ -237,6 +244,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -361,6 +370,8 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  geocoder
+  gon
   gretel
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

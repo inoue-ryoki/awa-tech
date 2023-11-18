@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    gon.user = @user
     @following_users = @user.following_user
     # フォローしている人の数を表示するための記述
     @follower_users = @user.follower_user

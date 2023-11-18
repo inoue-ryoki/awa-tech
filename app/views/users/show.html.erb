@@ -71,13 +71,12 @@
     </tbody>
   </table>
 
-  <h2>gmap</h2>
 <div id='map'></div>
 
 <style>
 #map {
   height: 600px;
-  width: 600px;
+  width: 1000px;
 }
 </style>
 
@@ -86,14 +85,16 @@ let map
 
 function initMap(){
   geocoder = new google.maps.Geocoder()
+// 34.07447383679006, 134.55133079302766
+  latlon = {lat: gon.user.latitude , lng: gon.user.longitude}
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.7828, lng:-73.9653},
+    center: latlon,
     zoom: 12,
   });
-
+  console.log(<%= @user.to_json.html_safe %>);
   marker = new google.maps.Marker({
-    position:  {lat: 40.7828, lng:-73.9653},
+    position: latlon,
     map: map
   });
 }

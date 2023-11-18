@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  geocoded_by :address
+  after_validation :geocode
+
   # フォローしたか、されたかの関係
   has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :followed, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
