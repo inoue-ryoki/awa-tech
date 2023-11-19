@@ -23,3 +23,4 @@ require('jquery')
 // const imagePath = (name) => images(name, true)
 
 import "./search"
+import "./maps"

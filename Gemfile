@@ -78,3 +78,7 @@ gem "aws-sdk-s3", require: false
 gem 'jquery-rails'
 gem "gretel"
 gem 'kaminari'
+
+gem 'dotenv-rails'
+gem 'geocoder'
+gem 'gon'
