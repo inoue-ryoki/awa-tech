@@ -28,6 +28,8 @@ http://awa-tech-aws.com/
   - Docker
 - データベース
   - Mariadb
+- API
+  - Google Maps API
 
 ## 開発方法
   ①Dockerのインストール、このリポジトリをクローン
@@ -125,6 +127,8 @@ https://docs.google.com/spreadsheets/d/1j_iKoNoY0_ER8la6c4Mu0XfEp4xleKqHMGwlQ-uu
 | telephone_number           | string | null: false |
 | teacher_name               | string | null: false |
 | school_content             | string | null: false |
+| latitude                   | float |
+| longitude                  | float |
 
 ### Association
 
